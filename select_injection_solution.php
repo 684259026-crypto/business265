@@ -7,6 +7,7 @@ require "connect.php";
 if (isset($_GET["CustomerID"])) {
     $cid = $_GET["CustomerID"];
     $sql = "SELECT * From customer where CustomerID = :customerID ";
+    /** @var PDO $conn */
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':customerID', $cid);

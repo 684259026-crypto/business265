@@ -9,7 +9,7 @@ if (isset($_GET["CustomerID"])) {
     echo "<br>" . "strCustomerID =" . $strCustomerID;
     $sql = "SELECT * From customer where CustomerID = '" . $strCustomerID . "'";
     echo "<br>" . "sql = " . $sql . "<br>";
-
+    /** @var PDO $conn */
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll();
